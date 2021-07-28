@@ -6,6 +6,7 @@ import AuthService from "./services/Auth";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import createDebug from "debug";
+import parseUser from "./middlewares/parseUser";
 
 async function main() {
   const app = express();
@@ -17,6 +18,7 @@ async function main() {
   app.use(cors());
   app.use(cookieParser());
   app.use(passport.initialize());
+  app.use(parseUser);
 
   app.use(routes);
 
