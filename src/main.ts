@@ -7,6 +7,8 @@ import cookieParser from "cookie-parser";
 import passport from "passport";
 import createDebug from "debug";
 import parseUser from "./middlewares/parseUser";
+import fileUpload from "express-fileupload";
+import errors from "./middlewares/errors";
 
 async function main() {
   const app = express();
@@ -15,10 +17,12 @@ async function main() {
   AuthService.configure();
 
   app.use(express.json());
+  app.use(fileUpload());
   app.use(cors());
   app.use(cookieParser());
   app.use(passport.initialize());
   app.use(parseUser);
+  app.use(errors);
 
   app.use(routes);
 
