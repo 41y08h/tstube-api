@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node ./build/index.js",
-    "dev": "nodemon --transpile-only src/main.ts"
+    "dev": "nodemon --transpile-only src/main.ts",
+    "seed": "ts-node src/seeder"
   },
   "dependencies": {
     "@types/axios": "^0.14.0",
