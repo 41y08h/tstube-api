@@ -13,6 +13,9 @@ declare global {
     interface Request {
       currentUser?: IUser;
     }
+    interface Response {
+      error(message: string, code?: number);
+    }
   }
 }
 
