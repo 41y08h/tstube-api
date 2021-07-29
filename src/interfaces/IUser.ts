@@ -4,4 +4,5 @@ export default interface IUser {
   picture: string;
   email: string;
   gid: string;
+  createdAt: Date;
 }
