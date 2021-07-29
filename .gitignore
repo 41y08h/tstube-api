@@ -5,3 +5,5 @@ yarn-error.log
 ffmpeg
 temp
 !temp/.gitkeep
+localstore
+!localstore/.gitkeep

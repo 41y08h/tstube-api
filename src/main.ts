@@ -9,6 +9,8 @@ import createDebug from "debug";
 import parseUser from "./middlewares/parseUser";
 import fileUpload from "express-fileupload";
 import errors from "./middlewares/errors";
+import morgan from "morgan";
+import path from "path";
 
 async function main() {
   const app = express();
@@ -16,6 +18,10 @@ async function main() {
 
   AuthService.configure();
 
+  if (process.env.NODE_ENV === "development") {
+    app.use("/localstore", express.static(path.join(__dirname, "localstore")));
+    app.use(morgan("dev"));
+  }
   app.use(express.json());
   app.use(fileUpload());
   app.use(cors());

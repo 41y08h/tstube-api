@@ -7,6 +7,7 @@ declare global {
       GOOGLE_CLIENT_SECRET: string;
       JWT_SECRET: string;
       GITHUB_ACCESS_TOKEN: string;
+      NODE_ENV: "development" | "production";
     }
   }
 
