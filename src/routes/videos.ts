@@ -4,6 +4,7 @@ import VideosController from "../controllers/Videos";
 
 const videos = Router();
 
+videos.get("/", VideosController.getAll);
 videos.post("/", authenticate, VideosController.upload);
 
 export default videos;
